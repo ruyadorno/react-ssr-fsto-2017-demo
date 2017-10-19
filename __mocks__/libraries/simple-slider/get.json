@@ -1,0 +1,155 @@
+{
+    "name": "simple-slider",
+    "version": "1.0.0",
+    "description": "The 1kb JavaScript Carousel",
+    "filename": "simpleslider.min.js",
+    "homepage": "https://ruyadorno.github.io/simple-slider/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ruyadorno/simple-slider.git"
+    },
+    "keywords": [
+        "simple",
+        "carousel",
+        "slider",
+        "gallery",
+        "slideshow",
+        "lightweight",
+        "minimalistic",
+        "micro",
+        "slick",
+        "lory",
+        "siema",
+        "swipe",
+        "swiper",
+        "flickity",
+        "islider",
+        "owlcarousel",
+        "unslider",
+        "glide",
+        "glidejs",
+        "javascript-carousel",
+        "DOM",
+        "browser"
+    ],
+    "author": "Ruy Adorno (http://ruyadorno.com)",
+    "license": "MIT",
+    "autoupdate": {
+        "type": "npm",
+        "target": "simple-slider"
+    },
+    "assets": [
+        {
+            "version": "1.0.0",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.6.3-rc",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.6.3",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.6.2",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.6.1",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.6.0",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.5.2",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.5.1",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.5.0",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.4.0",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.3.0",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.2.5",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.2.4",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.2.3",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.2.2",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        },
+        {
+            "version": "0.1.0",
+            "files": [
+                "simpleslider.js",
+                "simpleslider.min.js"
+            ]
+        }
+    ]
+}
