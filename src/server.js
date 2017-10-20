@@ -32,7 +32,7 @@ server
   .use((req, res, next) => {
     const Component = routes[req.url].component;
     req.markup = renderToString(
-      <Component data={req.props} />
+      <Component {...req.props} />
     );
     next();
   })
@@ -48,9 +48,12 @@ server
       ${assets.client.css
         ? `<link rel="stylesheet" href="${assets.client.css}">`
         : ''}
+      <script>
+        window.store = JSON.parse('${JSON.stringify(req.props)}');
+      </script>
       ${process.env.NODE_ENV === 'production'
-        ? `<script src="${assets.client.js}" defer></script>`
-        : `<script src="${assets.client.js}" defer crossorigin></script>`}
+        ? `<script src="${assets.client.js}"></script>`
+        : `<script src="${assets.client.js}" crossorigin></script>`}
   </head>
   <body>
       <div id="root">${req.markup}</div>
