@@ -1,4 +1,5 @@
 import BrowserRouter from 'react-router-dom/BrowserRouter';
+import 'semantic-ui-css/semantic.min.css';
 import React from 'react';
 
 if (module.hot) {
