@@ -32,7 +32,9 @@ class LibList extends Component {
           <Table.Body>
             { results.map(item => (
               <Table.Row key={item.name}>
-                <Table.Cell>{ item.name }</Table.Cell>
+                <Table.Cell>
+                  <a href={`/libs/${ item.name }`}>{ item.name }</a>
+                </Table.Cell>
               </Table.Row>
             )) }
           </Table.Body>

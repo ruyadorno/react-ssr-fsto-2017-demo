@@ -8,7 +8,7 @@ class Home extends Component {
     return (
       <div style={{padding: '2rem'}}>
         <Menu pointing>
-          <Menu.Item name='home' active />
+          <Menu.Item name='home' active href="/" />
         </Menu>
         <Segment>
           <Header as="h2">CDNJS libraries</Header>

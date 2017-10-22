@@ -4,25 +4,41 @@ import got from 'got';
 import { renderToString } from 'react-dom/server';
 
 import Home from './Home';
+import Lib from './Lib';
+
+function isProd() {
+  return process.env.NODE_ENV === 'production';
+}
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 const mockServer = 'http://localhost:8059';
 
 const routes = {
   '/': {
-    endpoint: process.env.NODE_ENV === 'production'
+    endpoint: () => isProd()
       ? 'https://api.cdnjs.com/libraries'
       : `${mockServer}/libraries`,
     component: Home
-  }
+  },
+  '/libs': {
+    endpoint: name => isProd()
+      ? `https://api.cdnjs.com/libraries/${name}`
+      : `${mockServer}/libraries/${name}`,
+    component: Lib
+  },
 };
 
 const server = express();
 server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .use('/libs/:name', (req, res, next) => {
+    req.key = '/libs';
+    req.keyName = req.params.name;
+    next();
+  })
   .use((req, res, next) => {
-    got(routes[req.url].endpoint, { json: true })
+    got(routes[req.key || req.url].endpoint(req.keyName), { json: true })
       .then(data => {
         req.props = data.body;
         next();
@@ -30,7 +46,7 @@ server
       .catch(next);
   })
   .use((req, res, next) => {
-    const Component = routes[req.url].component;
+    const Component = routes[req.key || req.url].component;
     req.markup = renderToString(
       <Component {...req.props} />
     );
@@ -51,7 +67,7 @@ server
       <script>
         window.store = JSON.parse('${JSON.stringify(req.props)}');
       </script>
-      ${process.env.NODE_ENV === 'production'
+      ${isProd()
         ? `<script src="${assets.client.js}"></script>`
         : `<script src="${assets.client.js}" crossorigin></script>`}
   </head>
