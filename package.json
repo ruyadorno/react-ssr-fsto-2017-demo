@@ -1,17 +1,17 @@
 {
-  "name": "my-razzle-app",
+  "name": "react-ssr-fsto-2017-demo",
+  "description": "A standard Razzle app demo using a static-first approach",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "start:razzle": "razzle start",
     "start:mocks": "snapstub start",
     "start": "run-p start:razzle start:mocks",
-    "build": "razzle build",
+    "build": "RAZZLE_PUBLIC_DIR=/usr/src/app/build/public razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
-    "dom-loaded": "^1.0.1",
     "express": "^4.16.2",
     "got": "^7.1.0",
     "npm-run-all": "^4.1.1",
@@ -21,6 +21,7 @@
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
     "semantic-ui-css": "^2.2.12",
-    "semantic-ui-react": "^0.75.1"
+    "semantic-ui-react": "^0.75.1",
+    "when-dom-ready": "^1.2.12"
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import domLoaded from 'dom-loaded';
+import domLoaded from 'when-dom-ready';
 import 'semantic-ui-css/semantic.min.css';
 
 import LibList from './Home/LibList';
@@ -11,7 +11,7 @@ const client = {
 
 window.bindComponent = {
   render(ref) {
-    domLoaded.then(() => {
+    domLoaded().then(() => {
       const Component = client[ref];
       render(<Component { ...window.store }/>, document.querySelector(`[data-component=${ref}]`));
     });
